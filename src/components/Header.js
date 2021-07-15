@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Route } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Grid, Text, Button } from "../elements";
 import { history } from "../redux/configureStore";
 
-const Header = () => {
+const Header = ({history}) => {
   return (
     <React.Fragment>
       <Grid>
@@ -31,7 +31,7 @@ const Header = () => {
             <thead>
               <tr>
                 <th width="100px">글번호</th>
-                <th width="300px" >글쓴이</th>
+                <th width="300px">글쓴이</th>
                 <th width="300px">글제목</th>
               </tr>
             </thead>
@@ -63,4 +63,5 @@ const Table = styled.div`
   background-color: #ffdfb9;
 `;
 
-export default Header;
+export default withRouter(Header);
+//withRouter연결하기
